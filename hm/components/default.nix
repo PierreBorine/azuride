@@ -7,7 +7,6 @@ self: {
   imports = [
     ./screenshots.nix
     ./colorpicker.nix
-    ./udiskie.nix
     (import ./ags.nix self)
     ./wallpaper
     (import ./anyrun self)
@@ -32,6 +31,16 @@ self: {
       # default: Paris
       latitude = 48.86;
       longitude = 2.34;
+    };
+
+    services.udiskie = {
+      enable = true;
+      settings = {
+        program_options.terminal = "footclient -D";
+        icon_names = {
+          media = ["media-eject-symbolic"];
+        };
+      };
     };
   };
 }
