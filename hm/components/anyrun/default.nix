@@ -53,40 +53,42 @@ self: {
            )
         '';
 
-        "better-websearch.ron".text = /* ron */ ''
-          Config(
-            prefix: "@",
-            default_engine: Brave,
-            engines: [
-              Github,
-              Custom(
-                name: "Nixpkgs",
-                url: "search.nixos.org/packages?query={}",
-                secondary_prefix: "nixpkgs",
-              ),
-              Custom(
-                name: "NixOS Options",
-                url: "search.nixos.org/options?query={}",
-                secondary_prefix: "nixopts",
-              ),
-              Custom(
-                name: "Home Manager",
-                url: "home-manager-options.extranix.com/?query={}",
-                secondary_prefix: "home",
-              ),
-              Custom(
-                name: "Noogle",
-                url: "noogle.dev/q?term={}",
-                secondary_prefix: "noogle",
-              ),
-              Custom(
-                name: "Github Nix",
-                url: "github.com/search?q=language%3ANix+{}&type=code",
-                secondary_prefix: "githubnix",
-              ),
-            ]
-          )
-        '';
+        "better-websearch.ron".text =
+          # ron
+          ''
+            Config(
+              prefix: "@",
+              default_engine: Brave,
+              engines: [
+                Github,
+                Custom(
+                  name: "Nixpkgs",
+                  url: "search.nixos.org/packages?query={}",
+                  secondary_prefix: "nixpkgs",
+                ),
+                Custom(
+                  name: "NixOS Options",
+                  url: "search.nixos.org/options?query={}",
+                  secondary_prefix: "nixopts",
+                ),
+                Custom(
+                  name: "Home Manager",
+                  url: "home-manager-options.extranix.com/?query={}",
+                  secondary_prefix: "home",
+                ),
+                Custom(
+                  name: "Noogle",
+                  url: "noogle.dev/q?term={}",
+                  secondary_prefix: "noogle",
+                ),
+                Custom(
+                  name: "Github Nix",
+                  url: "github.com/search?q=language%3ANix+{}&type=code",
+                  secondary_prefix: "githubnix",
+                ),
+              ]
+            )
+          '';
       };
     };
   };

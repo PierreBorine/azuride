@@ -25,7 +25,11 @@
     };
   };
 
-  outputs = {self, nixpkgs, ...}: let
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  }: let
     pkgs = import nixpkgs {system = "x86_64-linux";};
   in {
     lib = import ./lib {inherit pkgs;};

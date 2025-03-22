@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf config.azuride.enable {
     # See: https://wiki.hyprland.org/Configuring/Environment-variables
     wayland.windowManager.hyprland.settings.env = [

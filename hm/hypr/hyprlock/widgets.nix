@@ -55,7 +55,8 @@ in {
           fail_color = "rgba(0, 0, 0, 0)";
           fail_text = "$FAIL <b>($ATTEMPTS)</b>";
         }
-        { # State icon
+        {
+          # State icon
           monitor = "";
           size = "20, 20";
           position = "0, -530";

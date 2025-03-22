@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   # Disable some stylix modules so they don't interfere
   config = lib.mkIf (builtins.hasAttr "stylix" config) {
     stylix.targets.hyprland.enable = false;

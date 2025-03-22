@@ -1,4 +1,8 @@
-{config, lib, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf config.azuride.enable {
     wayland.windowManager.hyprland.settings = {
       # exec = ["pgrep glpaper || glpaper DP-1 $XDG_CONFIG_HOME/wallpapers/shaders/Rainbow_Twister.frag.frag"];
@@ -41,24 +45,20 @@
       animations = {
         enabled = true;
 
-        bezier = [
-          "myBezier, 0.5, 0.5, 0, 1"
-        ];
+        bezier = ["halfEaseOut, 0.5, 0.5, 0, 1"];
 
         animation = [
-          "windows, 1, 5, myBezier, slide"
+          "windows, 1, 5, halfEaseOut, slide"
           "windowsOut, 1, 5, default, popin 80%"
           "border, 1, 6, default"
           "borderangle, 1, 8, default"
           "fade, 1, 5, default"
           "workspaces, 1, 5, default"
-          "layers, 1, 3, myBezier, slide"
+          "layers, 1, 3, halfEaseOut, slide"
         ];
       };
 
-      layerrule = [
-        "noanim, hyprpicker"
-      ];
+      layerrule = ["noanim, hyprpicker"];
     };
   };
 }

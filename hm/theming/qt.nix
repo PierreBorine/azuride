@@ -1,4 +1,8 @@
-self: {pkgs, lib, ...}: {
+self: {
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs; [
     libsForQt5.qt5.qtsvg
     kdePackages.qtsvg

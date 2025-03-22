@@ -24,7 +24,7 @@
     '';
 
     wayland.windowManager.hyprland.settings = {
-      layerrule = [ "noanim, selection" ];
+      layerrule = ["noanim, selection"];
       "$hyprshotBase" = builtins.concatStringsSep " " [
         "hyprshot"
         "--silent"
