@@ -23,8 +23,8 @@
     ];
     wayland.windowManager.hyprland.settings = {
       bind = [
-        "ALT, Print, exec, gcolor3 --color \"$(hyprpicker --autocopy)\" #utilities: pick a color and open gcolor3"
-        "ALT&SHIFT, Print, exec, hyprpicker --autocopy #utilities: pick a color"
+        "CTRL, Print, exec, hyprpicker --autocopy #utilities: pick a color"
+        "CTRL&SHIFT, Print, exec, gcolor3 --color \"$(hyprpicker --autocopy)\" #utilities: pick a color and open gcolor3"
       ];
       windowrulev2 = [
         "float, class:(gcolor3)"
