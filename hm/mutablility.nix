@@ -11,7 +11,7 @@ in {
     mergeAttrsList = builtins.foldl' (lib.mergeAttrs) { };
 
     fileAttrsType = lib.types.attrsOf (lib.types.submodule ({ config, ... }: {
-      options.mutable = lib.mkOption {
+      options.azurideMutable = lib.mkOption {
         type = lib.types.bool;
         default = false;
         description = ''
@@ -37,7 +37,7 @@ in {
         fileOptionAttrPaths));
 
       filterMutableFiles = builtins.filter (file:
-        (file.mutable or false) && lib.assertMsg file.force
+        (file.azurideMutable or false) && lib.assertMsg file.force
         "if you specify `mutable` to `true` on a file, you must also set `force` to `true`");
 
       mutableFiles = filterMutableFiles allFiles;

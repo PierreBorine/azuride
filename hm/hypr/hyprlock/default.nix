@@ -36,7 +36,7 @@ in {
     home.file.".config/hypr/hyprlock-mutable.conf" = {
       text = "";
       force = true;
-      mutable = true;
+      azurideMutable = true;
     };
 
     programs.hyprlock = {

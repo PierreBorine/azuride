@@ -45,7 +45,7 @@ self: {
     home.file.".config/hypr/pyprland-mutable.toml" = {
       text = "";
       force = true;
-      mutable = true;
+      azurideMutable = true;
     };
   };
 }

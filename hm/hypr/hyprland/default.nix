@@ -16,7 +16,7 @@
     home.file.".config/hypr/hyprland-mutable.conf" = {
       text = "";
       force = true;
-      mutable = true;
+      azurideMutable = true;
     };
 
     wayland.windowManager.hyprland = {
