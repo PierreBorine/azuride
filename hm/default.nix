@@ -1,14 +1,10 @@
-self: {lib, ...}: let
-in {
+self: {
   imports = [
     ./impermanence.nix
     ./mutablility.nix
     (import ./components self)
     (import ./theming self)
     (import ./hypr self)
+    ./module
   ];
-
-  options.azuride = {
-    enable = lib.mkEnableOption "My Hyprland based desktop environment";
-  };
 }

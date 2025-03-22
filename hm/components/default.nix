@@ -28,9 +28,11 @@ self: {
 
     services.gammastep = {
       enable = true;
-      # default: Paris
-      latitude = 48.86;
-      longitude = 2.34;
+      inherit
+        (config.azuride.config.locale)
+        latitude
+        longitude
+        ;
     };
 
     services.udiskie = {

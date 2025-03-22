@@ -8,7 +8,9 @@
       "$mainMod" = "SUPER";
 
       input = {
-        kb_options = "caps:swapescape, fkeys:basic_13-24";
+        kb_options =
+          builtins.concatStringsSep ", " (["fkeys:basic_13-24"]
+          ++ lib.optional config.azuride.config.inputs.swap-case "caps:swapescape");
       };
 
       binds = {
