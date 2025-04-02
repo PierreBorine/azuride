@@ -20,7 +20,7 @@
       bind = [
         ## ▄▀█ █▀█ █▀█ █▀ ##
         ## █▀█ █▀▀ █▀▀ ▄█ ##
-        "$mainMod&CTRL, return, exec, foot -o pad=0x0 -o colors.alpha=1 -D $FLAKE nvim #apps: Summon a terminal inside nix-config"
+        "$mainMod&CTRL, return, exec, foot -D $FLAKE nvim #apps: Summon a terminal inside nix-config"
         "$mainMod, return, exec, $terminal #apps: Summon a terminal window"
 
         ## █░█░█ █ █▄░█ █▀▄ █▀█ █░█░█ █▀ ##
