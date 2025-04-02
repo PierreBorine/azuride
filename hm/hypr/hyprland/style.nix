@@ -17,16 +17,16 @@
       };
 
       decoration = {
-        rounding = 15;
+        rounding = 12;
         rounding_power = 4.0;
 
         blur = {
           enabled = true;
           size = 16;
           passes = 4;
-          noise = 0.09;
-          contrast = 0.8;
-          brightness = 0.5;
+          noise = 0.075;
+          contrast = 1.2;
+          brightness = 0.65;
           vibrancy = 0.8;
           vibrancy_darkness = 0.8;
         };
@@ -49,9 +49,7 @@
 
         animation = [
           "windows, 1, 5, halfEaseOut, slide"
-          "windowsOut, 1, 5, default, popin 80%"
-          "border, 1, 6, default"
-          "borderangle, 1, 8, default"
+          "windowsOut, 1, 4, default, gnomed"
           "fade, 1, 5, default"
           "workspaces, 1, 5, default"
           "layers, 1, 3, halfEaseOut, slide"
