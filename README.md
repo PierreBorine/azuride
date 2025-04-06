@@ -14,7 +14,7 @@
 </div>
 
 > [!WARNING]
-> This is highly work-in-progress
+> This is used for personal testing, you are free to use, but you shouldn't.
 
 # Instalation
 ## NixOS
