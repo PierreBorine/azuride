@@ -5,7 +5,9 @@ self: {
   pkgs,
   lib,
   ...
-}: {
+}: let
+  docsEnabled = osConfig.documentation.enable && osConfig.documentation.man.enable;
+in {
   imports = [self.inputs.anyrun.homeManagerModules.default];
 
   config = lib.mkIf config.azuride.enable {
@@ -27,13 +29,14 @@ self: {
         showResultsImmediately = true;
         maxEntries = 10;
 
-        plugins = with self.inputs.anyrun.packages.${pkgs.system}; [
-          self.inputs.anyrun-nixos-options.packages.${pkgs.system}.default
-          self.inputs.anyrun-better-websearch.packages.${pkgs.system}.default
-          applications
-          rink
-          shell
-        ];
+        plugins = with self.inputs.anyrun.packages.${pkgs.system};
+          [
+            self.inputs.anyrun-better-websearch.packages.${pkgs.system}.default
+            applications
+            rink
+            shell
+          ]
+          ++ (lib.optional docsEnabled self.inputs.anyrun-nixos-options.packages.${pkgs.system}.default);
       };
 
       extraCss = builtins.readFile (self.lib.compileScssFile "style.css" ./style.scss);
@@ -42,10 +45,10 @@ self: {
         "nixos-options.ron".text = let
           nixos-options = osConfig.system.build.manual.optionsJSON + "/share/doc/nixos/options.json";
           hm-options = inputs.home-manager.packages.${pkgs.system}.docs-json + "/share/doc/home-manager/options.json";
-          options = builtins.toJSON {
-            ":nix" = [nixos-options];
-            ":hm" = [hm-options];
-          };
+          options = builtins.toJSON ({
+              ":hm" = [hm-options];
+            }
+            // (lib.optionalAttrs docsEnabled {":nix" = [nixos-options];}));
         in ''
           Config(
               options: ${options},
@@ -85,6 +88,11 @@ self: {
                   name: "Github Nix",
                   url: "github.com/search?q=language%3ANix+{}&type=code",
                   secondary_prefix: "githubnix",
+                ),
+                Custom(
+                  name: "Nixpkgs PR Tracker",
+                  url: "nixpk.gs/pr-tracker.html?pr={}",
+                  secondary_prefix: "nixpkgsprtracker",
                 ),
               ]
             )

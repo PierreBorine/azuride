@@ -1,6 +1,6 @@
 self: {pkgs, ...}: {
   imports = [
-    ./stylix.nix
+    # ./stylix.nix
     ./gtk.nix
     (import ./qt.nix self)
   ];
