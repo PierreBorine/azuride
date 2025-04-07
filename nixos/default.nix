@@ -13,6 +13,8 @@ in {
     programs.hyprland.enable = true;
     security.pam.services.hyprlock = {};
 
+    programs.dconf.enable = true;
+
     home-manager.sharedModules = [
       self.homeManagerModules.default
       {azuride.enable = lib.mkDefault true;}

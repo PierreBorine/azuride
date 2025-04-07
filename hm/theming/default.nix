@@ -22,5 +22,6 @@ self: {pkgs, ...}: {
     # Fonts
     adwaita-fonts
     departure-mono
+    nerd-fonts.fira-code
   ];
 }
