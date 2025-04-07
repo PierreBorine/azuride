@@ -45,19 +45,6 @@
           ",preferred,auto,auto"
         ];
 
-        input = {
-          kb_layout = "be";
-          follow_mouse = 1;
-
-          numlock_by_default = true;
-          force_no_accel = false;
-
-          repeat_rate = 35;
-          repeat_delay = 300; # previously 250
-
-          sensitivity = 0.5; # -1.0 - 1.0, 0 means no modification
-        };
-
         general = {
           layout = "dwindle";
           resize_on_border = true;

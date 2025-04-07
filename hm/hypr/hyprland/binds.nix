@@ -8,9 +8,19 @@
       "$mainMod" = "SUPER";
 
       input = {
+        kb_layout = config.azuride.config.inputs.layout;
         kb_options =
           builtins.concatStringsSep ", " (["fkeys:basic_13-24"]
           ++ lib.optional config.azuride.config.inputs.swap-case "caps:swapescape");
+        follow_mouse = 1;
+
+        numlock_by_default = true;
+        force_no_accel = false;
+
+        repeat_rate = 35;
+        repeat_delay = 300;
+
+        sensitivity = 0.5;
       };
 
       binds = {
