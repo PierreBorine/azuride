@@ -26,6 +26,9 @@ self: {
       kdePackages.xwaylandvideobridge
     ];
 
+    # Enable "$XDG_..." env vars
+    xdg.enable = true;
+
     services.gammastep = {
       enable = true;
       inherit
