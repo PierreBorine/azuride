@@ -26,7 +26,7 @@
         hypr-dynamic-cursors
       ];
       settings = {
-        "$terminal" = "footclient";
+        "$terminal" = config.azuride.terminal.main-cmd;
 
         source = ["hyprland-mutable.conf"];
 
@@ -37,7 +37,6 @@
         exec-once = [
           # Find a way to play it 500ms earlier to be more in sync
           "${pkgs.sox}/bin/play --volume 0.2 ${./uiSounds/startup-smooth-activation.mp3}" # Startup sound
-          "foot --server"
         ];
 
         monitor = [

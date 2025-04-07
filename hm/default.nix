@@ -5,6 +5,7 @@ self: {
     (import ./components self)
     (import ./theming self)
     (import ./hypr self)
+    ./programs
     ./module
   ];
 }

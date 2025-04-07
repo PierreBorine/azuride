@@ -4,25 +4,11 @@
   lib,
   ...
 }: let
-  empty-window = lib.escapeShellArgs [
-    (lib.getExe pkgs.foot) # Relies on patch to allow foot to be transparent in fullscreen
-    "--title"
-    "TRANSPARENT"
-    "--app-id"
-    "TRANSPARENT"
-    "-o"
-    "cursor.beam-thickness=0"
-    "-o"
-    "cursor.unfocused-style=none"
-    "bash"
-    "-c"
-    "clear && while true; do clear; done"
-  ];
   lock-script = pkgs.writeShellScriptBin "custom-session-lock" ''
     if ! pidof hyprlock > /dev/null; then
-      ${empty-window} &
+      ags request 'show blur' -i ${config.ags-config.instanceName}
       hyprlock $1
-      kill $!
+      ags request 'hide blur' -i ${config.ags-config.instanceName}
     fi
   '';
 in {

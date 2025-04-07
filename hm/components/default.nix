@@ -41,7 +41,7 @@ self: {
     services.udiskie = {
       enable = true;
       settings = {
-        program_options.terminal = "footclient -D";
+        program_options.terminal = "${config.azuride.terminal.alt-cmd} ${config.azuride.terminal.work-dir-flag}";
         icon_names = {
           media = ["media-eject-symbolic"];
         };

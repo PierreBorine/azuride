@@ -54,9 +54,6 @@ Non supported (yet ?) and untested, but probably possible and not very hard.
 > config.azuride.persist.files
 > ```
 
-> [!IMPORTANT]
-> - Requiers `pkgs.foot` to be installed
-
 > [!WARNING]
 > Once again, this is highly work-in-progress, this may not work correctly
 > on your machine, I advice you to not use this flake in your own config
