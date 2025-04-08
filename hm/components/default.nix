@@ -20,10 +20,13 @@ self: {
       blueman # TODO: replace with "overskride" once feature-complete
       pwvucontrol
       wl-clipboard
-      wl-clip-persist
       kdePackages.qtwayland
       libsForQt5.qt5.qtwayland
       kdePackages.xwaylandvideobridge
+    ];
+
+    wayland.windowManager.hyprland.settings.exec-once = [
+      "${lib.getExe pkgs.wl-clip-persist} --clipboard both"
     ];
 
     # Enable "$XDG_..." env vars
