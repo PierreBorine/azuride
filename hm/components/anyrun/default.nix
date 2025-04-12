@@ -8,8 +8,6 @@ self: {
 }: let
   docsEnabled = osConfig.documentation.enable && osConfig.documentation.man.enable;
 in {
-  imports = [self.inputs.anyrun.homeManagerModules.default];
-
   config = lib.mkIf config.azuride.enable {
     wayland.windowManager.hyprland.settings = {
       bind = ["$mainMod, D, exec, anyrun"];
@@ -34,7 +32,7 @@ in {
             self.inputs.anyrun-better-websearch.packages.${pkgs.system}.default
             applications
             rink
-            shell
+            shell # ":sh"
           ]
           ++ (lib.optional docsEnabled self.inputs.anyrun-nixos-options.packages.${pkgs.system}.default);
       };
