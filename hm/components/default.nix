@@ -6,7 +6,7 @@ self: {
 }: {
   imports = [
     ./screenshots.nix
-    ./colorpicker.nix
+    (import ./colorpicker.nix self)
     (import ./ags.nix self)
     ./wallpaper
     (import ./anyrun self)

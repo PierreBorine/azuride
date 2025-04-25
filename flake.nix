@@ -9,6 +9,7 @@
     anyrun.url = "github:anyrun-org/anyrun";
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
     anyrun-better-websearch.url = "github:PierreBorine/anyrun-better-websearch";
+    gcolor3.url = "github:PierreBorine/gcolor3";
     ags-config = {
       url = "github:PierreBorine/ags-config";
       inputs.nixpkgs.follows = "nixpkgs";

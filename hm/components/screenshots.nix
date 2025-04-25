@@ -17,13 +17,13 @@
       early-exit = true
       initial-tool = "crop"
       copy-command = "wl-copy"
-      # Increase or decrease the size of the annotations
       annotation-size-factor = 1.2
-      # After copying the screenshot, save it to a file as well
       save-after-copy = true
     '';
 
-    wayland.windowManager.hyprland.settings = {
+    wayland.windowManager.hyprland.settings = let
+      date_format = "%d-%m-%Y_%H:%M:%S";
+    in {
       layerrule = ["noanim, selection"];
       "$hyprshotBase" = builtins.concatStringsSep " " [
         "hyprshot"
@@ -31,7 +31,7 @@
         "--output-folder"
         "'$XDG_PICTURES_DIR/Screenshots'"
         "--filename"
-        "$(date '+%d-%m-%Y_%H:%M:%S.png')"
+        "$(date '+${date_format}.png')"
         "--mode"
       ];
       "$hyprshotSatty" = builtins.concatStringsSep " " [
@@ -41,7 +41,7 @@
         "--filename"
         "-"
         "--output-filename"
-        "'$XDG_PICTURES_DIR/Screenshots/%d-%m-%Y_%H:%M:%S-edited.png'"
+        "'$XDG_PICTURES_DIR/Screenshots/${date_format}-edited.png'"
       ];
       bind = [
         "ALT, PRINT, exec, $hyprshotBase region --freeze"

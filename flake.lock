@@ -234,6 +234,24 @@
         "type": "github"
       }
     },
+    "gcolor3": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1745350024,
+        "narHash": "sha256-BctRfmhbYiRM/djKvODXFDuvRl/xKxywwHjL0R9TOk0=",
+        "owner": "PierreBorine",
+        "repo": "gcolor3",
+        "rev": "8d17b8a3b4d3f01986ac9af64db97f3a18c841bf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PierreBorine",
+        "repo": "gcolor3",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -332,6 +350,22 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 1744932701,
+        "narHash": "sha256-fusHbZCyv126cyArUwwKrLdCkgVAIaa/fQJYFlCEqiU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b024ced1aac25639f8ca8fdfc2f8c4fbd66c48ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1743964447,
         "narHash": "sha256-nEo1t3Q0F+0jQ36HJfbJtiRU4OI+/0jX/iITURKe3EE=",
         "owner": "nixos",
@@ -346,7 +380,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1719082008,
         "narHash": "sha256-jHJSUH619zBQ6WdC21fFAlDxHErKVDJ5fpN0Hgx4sjs=",
@@ -390,7 +424,7 @@
     "pyprland": {
       "inputs": {
         "flake-compat": "flake-compat",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_6",
         "poetry2nix": "poetry2nix",
         "systems": "systems_4"
       },
@@ -415,7 +449,8 @@
         "anyrun-better-websearch": "anyrun-better-websearch",
         "anyrun-nixos-options": "anyrun-nixos-options",
         "darkly": "darkly",
-        "nixpkgs": "nixpkgs_4",
+        "gcolor3": "gcolor3",
+        "nixpkgs": "nixpkgs_5",
         "pyprland": "pyprland"
       }
     },
