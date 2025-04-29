@@ -74,5 +74,8 @@
         };
       };
     };
+
+    # crash logs
+    azuride.persist.dirs = [".cache/hyprland"];
   };
 }

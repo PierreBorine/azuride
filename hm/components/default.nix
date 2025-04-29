@@ -17,6 +17,7 @@ self: {
       egl-wayland
       playerctl
       # TODO: add wifi/network manager
+      # https://github.com/j-lentz/iwgtk
       blueman # TODO: replace with "overskride" once feature-complete
       pwvucontrol
       wl-clipboard
@@ -39,6 +40,9 @@ self: {
         latitude
         longitude
         ;
+      settings = {
+        general.brightness-night = 0.7;
+      };
     };
 
     services.udiskie = {
