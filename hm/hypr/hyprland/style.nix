@@ -29,6 +29,7 @@
           brightness = 0.65;
           vibrancy = 0.8;
           vibrancy_darkness = 0.8;
+          xray = true;
         };
 
         dim_inactive = true;

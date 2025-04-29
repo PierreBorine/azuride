@@ -15,8 +15,8 @@
 
         "float, class:(org.gnome.Calculator)"
 
-        "float,center,stayfocused,xray:1, class:(io.elementary.desktop.agent-polkit)"
-        "float,center,stayfocused,xray:1, class:(org.kde.polkit-kde-authentication-agent-1)"
+        "float,center,stayfocused, class:(io.elementary.desktop.agent-polkit)"
+        "float,center,stayfocused, class:(org.kde.polkit-kde-authentication-agent-1)"
       ];
     };
   };
