@@ -5,7 +5,7 @@
 }: {
   config = lib.mkIf config.azuride.enable {
     wayland.windowManager.hyprland.settings = {
-      windowrulev2 = [
+      windowrule = [
         "suppressevent maximise, class:.*"
 
         # Steam

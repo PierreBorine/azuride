@@ -14,7 +14,7 @@ self: {
         "CTRL, Print, exec, hyprpicker --autocopy #utilities: pick a color"
         "CTRL&SHIFT, Print, exec, gcolor3 --color \"$(hyprpicker --autocopy)\" #utilities: pick a color and open gcolor3"
       ];
-      windowrulev2 = [
+      windowrule = [
         "float, class:(gcolor3)"
         "size 746 274, class:(gcolor3)"
       ];

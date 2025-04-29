@@ -53,9 +53,9 @@ in {
       # Hyprlock
       exec-once = ${lib.getExe pkgs.wljoywake} # idle inhibit when using joysticks
       bind = $mainMod, L, exec, ${lib.getExe lock-script} --immediate
-      windowrulev2 = fullscreen, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
-      windowrulev2 = noanim, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
-      windowrulev2 = float, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
+      windowrule = fullscreen, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
+      windowrule = noanim, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
+      windowrule = float, class:(TRANSPARENT), initialTitle:(TRANSPARENT)
     '';
   };
 }

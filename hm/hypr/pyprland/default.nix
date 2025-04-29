@@ -20,7 +20,7 @@ self: {
         "$mainMod&SHIFT, K, exec, pypr layout_center prev   #layout_center: Change to previous window"
       ];
 
-      windowrulev2 = ["float, initialClass:(spotify)"];
+      windowrule = ["float, initialClass:(spotify)"];
     };
 
     xdg.configFile."hypr/pyprland.d" = {
