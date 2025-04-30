@@ -31,9 +31,14 @@
     nixpkgs,
     ...
   }: let
-    pkgs = import nixpkgs {system = "x86_64-linux";};
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {inherit system;};
   in {
     lib = import ./lib {inherit pkgs;};
+
+    packages.${system} = {
+      termpicker = pkgs.callPackage ./pkgs/termpicker.nix {};
+    };
 
     homeManagerModules = {
       default = self.homeManagerModules.azuride;
