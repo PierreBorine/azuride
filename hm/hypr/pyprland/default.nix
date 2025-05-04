@@ -37,8 +37,8 @@ self: {
       plugins = [ "layout_center" ]
 
       [pyprland.variables]
-      term = "${config.azuride.terminal.alt-cmd}"
-      term_classed = "${config.azuride.terminal.alt-cmd} ${config.azuride.terminal.class-flag}"
+      term = "${lib.getExe config.azuride.terminal.package}"
+      term_classed = "${lib.getExe config.azuride.terminal.package} ${config.azuride.terminal.class-flag}"
     '';
 
     # Additional mutable file for quick testing

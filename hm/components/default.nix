@@ -48,7 +48,7 @@ self: {
     services.udiskie = {
       enable = true;
       settings = {
-        program_options.terminal = "${config.azuride.terminal.alt-cmd} ${config.azuride.terminal.work-dir-flag}";
+        program_options.terminal = "${lib.getExe config.azuride.terminal.package} ${config.azuride.terminal.work-dir-flag}";
         icon_names = {
           media = ["media-eject-symbolic"];
         };

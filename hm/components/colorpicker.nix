@@ -21,7 +21,7 @@ self: {
           then [
             (builtins.concatStringsSep " " [
               "CTRL&SHIFT, Print, exec,"
-              "${config.azuride.terminal.package}/bin/${config.azuride.terminal.alt-cmd}"
+              "${lib.getExe config.azuride.terminal.package}"
               "${config.azuride.terminal.class-flag} termpicker"
               "termpicker --color \"$(hyprpicker --autocopy)\""
               "#utilities: pick a color and open termpicker"

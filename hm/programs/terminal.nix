@@ -5,24 +5,9 @@
   ...
 }: {
   options.azuride.terminal = {
-    foot.enable = lib.mkEnableOption "Whether to configure the Foot terminal" // {default = true;};
+    kitty.enable = lib.mkEnableOption "Whether to configure the Kitty terminal" // {default = true;};
 
-    package = lib.mkPackageOption pkgs "foot" {};
-
-    main-cmd = lib.mkOption {
-      type = lib.types.str;
-      default = "footclient";
-      description = "The main binary to execute as the usual terminal you'll work in.";
-    };
-    alt-cmd = lib.mkOption {
-      type = lib.types.str;
-      default = "foot";
-      description = ''
-        The alternate binary to execute the terminal in some other scenarios.
-        Mainly used for terminal applications in scratchpads and suchs things
-        that requiers a separate process.
-      '';
-    };
+    package = lib.mkPackageOption pkgs "kitty" {};
 
     class-flag = lib.mkOption {
       type = lib.types.str;
@@ -36,18 +21,31 @@
     };
   };
 
-  config = lib.mkIf config.azuride.terminal.foot.enable {
-    programs.foot = {
+  config = {
+    home.packages = [config.azuride.terminal.package];
+
+    programs.kitty = lib.mkIf config.azuride.terminal.kitty.enable {
       enable = true;
-      server.enable = true;
       settings = {
-        main = {
-          pad = "6x6";
-          # Fix color bug (temp)
-          gamma-correct-blending = "no"; # TODO: remove when fixed
-        };
-        cursor.style = "beam";
-        colors.alpha = 0.35;
+        # Cursor customisation
+        cursor_shape = "block";
+        cursor_blink_interval = 0;
+
+        # Performance tuning
+        sync_to_monitor = "yes";
+
+        # Terminal bell
+        enable_audio_bell = "no";
+
+        # Window layout
+        remember_window_size = "no";
+        initial_window_width = 1066;
+        initial_window_height = 668;
+        window_padding_width = 6;
+        confirm_os_window_close = 0;
+
+        # Advanced
+        shell_integration = "no-cursor";
       };
     };
   };

@@ -30,8 +30,7 @@
       bind = [
         ## ▄▀█ █▀█ █▀█ █▀ ##
         ## █▀█ █▀▀ █▀▀ ▄█ ##
-        "$mainMod&CTRL, return, exec, ${config.azuride.terminal.package}/bin/${config.azuride.terminal.alt-cmd} -D $FLAKE nvim #apps: Summon a terminal inside nix-config"
-        "$mainMod, return, exec, $terminal #apps: Summon a terminal window"
+        "$mainMod, return, exec, ${lib.getExe config.azuride.terminal.package} #apps: Summon a terminal window"
 
         ## █░█░█ █ █▄░█ █▀▄ █▀█ █░█░█ █▀ ##
         ## ▀▄▀▄▀ █ █░▀█ █▄▀ █▄█ ▀▄▀▄▀ ▄█ ##

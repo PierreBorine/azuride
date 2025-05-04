@@ -26,8 +26,6 @@
         hypr-dynamic-cursors
       ];
       settings = {
-        "$terminal" = config.azuride.terminal.main-cmd;
-
         source = ["hyprland-mutable.conf"];
 
         exec = [
