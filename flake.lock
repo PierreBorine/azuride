@@ -30,11 +30,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744064418,
-        "narHash": "sha256-qGtaxTRFeZ5lGUqX+ygA+NtCan67bglML617KNI3XxI=",
+        "lastModified": 1746412359,
+        "narHash": "sha256-8Os1whB+5ui9gfHZnn+oxU9VcDKTt6XkX4dU60NRP+I=",
         "owner": "PierreBorine",
         "repo": "ags-config",
-        "rev": "bf1568810dd558f0e376e3e406531d705703708a",
+        "rev": "81958469962d3cf1e56220d99170eaed98863fa4",
         "type": "github"
       },
       "original": {

@@ -6,7 +6,13 @@
   config = lib.mkIf config.azuride.enable {
     wayland.windowManager.hyprland.settings = {
       # exec = ["pgrep glpaper || glpaper DP-1 $XDG_CONFIG_HOME/wallpapers/shaders/Rainbow_Twister.frag.frag"];
-      exec = ["swww-daemon & swww img ${../../components/wallpaper/images/imac_2021.jpg} -t none"];
+      exec-once = ["swww-daemon"];
+      exec = [
+        (builtins.concatStringsSep " " [
+          "swww img $HOME/Pictures/Wallpapers/images/.selected -t none ||"
+          "swww img ${../../components/wallpaper/images/imac_2021.jpg} -t none"
+        ])
+      ];
 
       general = {
         gaps_in = 5;
