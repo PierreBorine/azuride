@@ -9,10 +9,15 @@
 
     package = lib.mkPackageOption pkgs "kitty" {};
 
+    command-flag = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+      description = "The cli flag that is used to provde a command to the terminal";
+    };
     class-flag = lib.mkOption {
       type = lib.types.str;
       default = "--app-id";
-      description = "The cli flag that is used to change the terminal's window class.";
+      description = "The cli flag that is used to change the terminal's window class";
     };
     work-dir-flag = lib.mkOption {
       type = lib.types.str;
