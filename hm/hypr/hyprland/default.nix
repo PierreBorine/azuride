@@ -74,6 +74,9 @@
     };
 
     # crash logs
-    azuride.persist.dirs = [".cache/hyprland"];
+    azuride.persist.dirs = [
+      ".cache/hyprland"
+      ".local/share/hyprland"
+    ];
   };
 }
