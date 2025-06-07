@@ -1,24 +1,21 @@
-self: {config, pkgs, lib, ...}: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # ./stylix.nix
     ./gtk.nix
-    (import ./qt.nix self)
+    ./qt.nix
   ];
 
   config = lib.mkIf config.azuride.enable {
     home.packages = with pkgs; [
-      libsForQt5.qt5.qtsvg
-      kdePackages.qtsvg
-
       # Icon Themes
-      # TODO: actually test them
       adwaita-icon-theme
-      # kdePackages.breeze-icons
-      # colloid-icon-theme
+      colloid-icon-theme
       kora-icon-theme
-      # fluent-icon-theme
-      # vimix-icon-theme
-      material-icons
 
       # Fonts
       adwaita-fonts

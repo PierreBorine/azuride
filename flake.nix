@@ -10,8 +10,13 @@
     anyrun-nixos-options.url = "github:n3oney/anyrun-nixos-options";
     anyrun-better-websearch.url = "github:PierreBorine/anyrun-better-websearch";
     gcolor3.url = "github:PierreBorine/gcolor3";
+    nix-packages = {
+      url = "github:PierreBorine/nix-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ags-config = {
       url = "github:PierreBorine/ags-config";
+      # url = "/mnt/Modding Drive/Projects/Nix/ags-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pyprland.url = "github:hyprland-community/pyprland";
@@ -20,10 +25,6 @@
     #   url = "github:Gerg-L/spicetify-nix";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    darkly = {
-      url = "github:Bali10050/Darkly";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
