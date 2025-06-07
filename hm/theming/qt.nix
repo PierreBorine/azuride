@@ -1,4 +1,5 @@
-self: {
+{
+  inputs,
   config,
   pkgs,
   lib,
@@ -8,6 +9,9 @@ self: {
     home.packages = with pkgs; [
       libsForQt5.qt5.qtsvg
       kdePackages.qtsvg
+
+      inputs.nix-packages.packages.x86_64-linux.qt6ct-kde
+      libsForQt5.qt5ct # WARN: Does not support kde color-schemes
     ];
 
     wayland.windowManager.hyprland.settings.env = [
@@ -16,30 +20,46 @@ self: {
 
     qt = {
       enable = true;
-      platformTheme.name = "qtct";
-      style.package = [
-        self.inputs.darkly.packages.${pkgs.system}.darkly-qt5
-        self.inputs.darkly.packages.${pkgs.system}.darkly-qt6
-      ];
+      platformTheme.name = "qt5ct"; # "qtct" = "qt5ct" + pkgs...qt5ct/qt6ct
+      style.package = with pkgs; [darkly-qt5 darkly];
+
+      kde.settings = {
+        kdeglobals = {
+          Icons.Theme = "kora";
+          TerminalApplication = config.azuride.terminal.package.meta.mainProgram;
+          UiSettings = {
+            ColorScheme = "*";
+          };
+        };
+      };
     };
 
     xdg.configFile = let
-      mkConf = qtct: (lib.generators.toINI {} {
-        Appearance = {
-          color_scheme_path = "${qtct}/share/${qtct.pname}/colors/darker.conf";
-          custom_palette = true;
-          standard_dialogs = "xdgdesktopportal";
-          icon_theme = "kora";
-          style = "Darkly";
+      mkConf = themePkg:
+        lib.generators.toINI {} {
+          Appearance = {
+            color_scheme_path = "${themePkg}/share/color-schemes/Darkly.colors";
+            custom_palette = true;
+            standard_dialogs = "default";
+            icon_theme = "kora";
+            style = "Darkly";
+          };
+          Fonts = {
+            fixed=''"Adwaita Mono,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"'';
+            general=''"Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"'';
+          };
+          Interface = {
+            buttonbox_layout = 3;
+            gui_effects = "General, AnimateMenu, AnimateCombo, AnimateTooltip, AnimateToolBox";
+          };
         };
-        Interface = {
-          buttonbox_layout = 3;
-          gui_effects = "General, AnimateMenu, AnimateCombo, AnimateTooltip, AnimateToolBox";
-        };
-      });
     in {
-      "qt6ct/qt6ct.conf".text = mkConf pkgs.kdePackages.qt6ct;
-      "qt5ct/qt5ct.conf".text = mkConf pkgs.libsForQt5.qt5ct;
+      "qt6ct/qt6ct.conf".text = mkConf pkgs.darkly;
+      "qt5ct/qt5ct.conf".text = mkConf pkgs.darkly-qt5;
     };
+
+    azuride.persist.files = [
+      ".config/kdeglobals"
+    ];
   };
 }
