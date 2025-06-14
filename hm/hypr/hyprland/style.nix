@@ -18,8 +18,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 1;
-        "col.active_border" = "0x75757566";
-        "col.inactive_border" = "0x75757566";
+        "col.active_border" = "0x59757575";
+        "col.inactive_border" = "0x59757575";
       };
 
       decoration = {
