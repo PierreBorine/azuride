@@ -1,5 +1,4 @@
-{
-  inputs,
+self: {
   config,
   pkgs,
   lib,
@@ -10,7 +9,7 @@
       libsForQt5.qt5.qtsvg
       kdePackages.qtsvg
 
-      inputs.nix-packages.packages.x86_64-linux.qt6ct-kde
+      self.inputs.nix-packages.packages.x86_64-linux.qt6ct-kde
       libsForQt5.qt5ct # WARN: Does not support kde color-schemes
     ];
 

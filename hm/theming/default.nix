@@ -1,4 +1,4 @@
-{
+self: {
   config,
   pkgs,
   lib,
@@ -7,7 +7,7 @@
   imports = [
     # ./stylix.nix
     ./gtk.nix
-    ./qt.nix
+    (import ./qt.nix self)
   ];
 
   config = lib.mkIf config.azuride.enable {

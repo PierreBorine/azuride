@@ -3,7 +3,7 @@ self: {
     ./impermanence.nix
     ./mutablility.nix
     (import ./components self)
-    ./theming
+    (import ./theming self)
     (import ./hypr self)
     ./programs
     ./module
