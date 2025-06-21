@@ -5,10 +5,11 @@
   ...
 }: {
   config = lib.mkIf config.azuride.enable {
+    home.packages = [config.gtk.theme.package];
     gtk = {
       enable = true;
       theme = {
-        name = lib.mkDefault "Colloid";
+        name = lib.mkDefault "Colloid-Dark";
         package = lib.mkDefault (pkgs.colloid-gtk-theme.override {
           colorVariants = ["dark"];
           tweaks = ["rimless" "normal"];
