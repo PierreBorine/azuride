@@ -51,6 +51,12 @@
 
         # Advanced
         shell_integration = "no-cursor";
+
+        background_opacity = "0.35";
+        background = "#151718";
+        foreground = "#d6d6d6";
+        selection_background = "#41535b";
+        selection_foreground = "#d6d6d6";
       };
     };
   };
