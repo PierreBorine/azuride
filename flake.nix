@@ -19,7 +19,6 @@
       # url = "/mnt/Modding Drive/Projects/Nix/ags-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pyprland.url = "github:hyprland-community/pyprland";
     # nixcord.url = "github:kaylorben/nixcord";
     # spicetify-nix = {
     #   url = "github:Gerg-L/spicetify-nix";
