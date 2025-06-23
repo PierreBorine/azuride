@@ -9,7 +9,7 @@ self: {
       pkgs.hyprpicker
       (
         if config.azuride.config.alt-colorpicker
-        then self.packages.x86_64-linux.termpicker
+        then self.inputs.nix-packages.packages.${pkgs.system}.termpicker
         else self.inputs.gcolor3.packages.${pkgs.system}.default
       )
     ];

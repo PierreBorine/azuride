@@ -36,10 +36,6 @@
   in {
     lib = import ./lib {inherit pkgs;};
 
-    packages.${system} = {
-      termpicker = pkgs.callPackage ./pkgs/termpicker.nix {};
-    };
-
     homeManagerModules = {
       default = self.homeManagerModules.azuride;
       azuride = import ./hm self;
