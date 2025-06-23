@@ -16,10 +16,6 @@ self: {
     home.packages = with pkgs; [
       egl-wayland
       playerctl
-      # TODO: add wifi/network manager
-      # https://github.com/j-lentz/iwgtk
-      blueman # TODO: replace with "overskride" once feature-complete
-      pwvucontrol
       wl-clipboard
       kdePackages.qtwayland
       libsForQt5.qt5.qtwayland

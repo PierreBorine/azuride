@@ -5,5 +5,6 @@
 
   imports = [
     ./terminal.nix
+    ./non-core.nix
   ];
 }
