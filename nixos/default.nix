@@ -15,6 +15,7 @@ in {
     (lib.mkIf cfg.enable {
       programs.hyprland.enable = true;
       security.pam.services.hyprlock = {};
+      services.udisks2.enable = true; # for udiskie
 
       programs.dconf.enable = true;
 
