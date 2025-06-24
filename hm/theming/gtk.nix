@@ -16,8 +16,8 @@
         });
       };
       iconTheme = {
-        name = "Colloid-Dark";
-        package = pkgs.colloid-icon-theme;
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
       };
       cursorTheme = {
         name = lib.mkDefault "Bibata-Modern-Classic";
