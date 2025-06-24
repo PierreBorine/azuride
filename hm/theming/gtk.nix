@@ -16,8 +16,8 @@
         });
       };
       iconTheme = {
-        name = "kora";
-        package = pkgs.kora-icon-theme;
+        name = "Colloid-Dark";
+        package = pkgs.colloid-icon-theme;
       };
       cursorTheme = {
         name = lib.mkDefault "Bibata-Modern-Classic";

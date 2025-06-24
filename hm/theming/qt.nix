@@ -24,7 +24,7 @@ self: {
 
       kde.settings = {
         kdeglobals = {
-          Icons.Theme = "kora";
+          Icons.Theme = "Colloid-Dark";
           TerminalApplication = config.azuride.terminal.package.meta.mainProgram;
           UiSettings = {
             ColorScheme = "*";
@@ -40,7 +40,7 @@ self: {
             color_scheme_path = "${themePkg}/share/color-schemes/Darkly.colors";
             custom_palette = true;
             standard_dialogs = "default";
-            icon_theme = "kora";
+            icon_theme = "Colloid-Dark";
             style = "Darkly";
           };
           Fonts = {
